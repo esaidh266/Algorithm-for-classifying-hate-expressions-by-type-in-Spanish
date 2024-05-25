@@ -17,7 +17,7 @@ La estructura de carpetas con la documentación de Github es la presentada a con
          └── 02_Tipos
              ├── hate_type_model
              │   ├── config.json
-	     │	 └── pytorch_mode.bin
+	     │	 └── pytorch_mode.bin (https://acortar.link/rbCxiy)
              ├── DOCUMENTACIÓN GITHUB.docx
              └── ejemplo.py
 
@@ -31,7 +31,7 @@ Se detalla a continuación el contenido de cada fichero:
   - config.json: Archivo JSON con la configuración del modelo entrenado.
   - pytorch_model.bin: Este archivo contiene los pesos de la red neuronal del modelo en formato binario compatible con PyTorch.
 
-El dataset que se ha utilizado para el entrenamiento de los modelos el el resultado de la concatenación del dataset dataset_DL_tipos.csv: https://acortar.link/pCuKtJ, con los distintos datasets generados mediante backtranslation, disponibles en la carpeta "03 Tipos de odio/Back translation": https://acortar.link/pCuKtJ
+El dataset que se ha utilizado para el entrenamiento de los modelos el el resultado de la concatenación del dataset dataset_DL_tipos.csv: https://acortar.link/pCuKtJ, con los distintos datasets generados mediante backtranslation, disponibles en la carpeta "03 Tipos de odio/Back translation": https://acortar.link/PceTsr
 
 El Algoritmo fue desarrollado a partir de las pruebas de los modelos aplicados que se muestran en la carpeta MODELOS (https://acortar.link/e6hZSe). En esta carpeta se encuentran todos los resultados de los modelos utilizados durante el proceso de desarrollo de este algoritmo, con los respectivos porcentajes de entrenamiento y prueba.
 
@@ -79,7 +79,7 @@ The folder structure with the GitHub documentation is presented below:
          └── 02_Tipos
              ├── hate_type_model
              │   ├── config.json
-	     │	 └── pytorch_mode.bin
+	     │	 └── pytorch_mode.bin (https://acortar.link/rbCxiy)
              ├── DOCUMENTACIÓN GITHUB.docx
              └── ejemplo.py
 
@@ -95,7 +95,7 @@ Python script showing the use of models to make predictions.
    - config.json: JSON file with the configuration of the trained model.
    - pytorch_model.bin: This file contains the model's neural network weights in binary format compatible with PyTorch.
 
-The dataset that has been used for training the models is the result of the concatenation of the dataset dataset_DL_tipos.csv: https://acortar.link/pCuKtJ, with the different datasets generated through back translation, available in the folder "03 Types of hatred/Back translation": https://acortar.link/pCuKtJ
+The dataset that has been used for training the models is the result of the concatenation of the dataset dataset_DL_tipos.csv: https://acortar.link/pCuKtJ, with the different datasets generated through back translation, available in the folder "03 Types of hatred/Back translation": https://acortar.link/PceTsr
 
 Results and comparisons generated during the training and validation process of the final model used for the development of the algorithm are shared in the MODELOS folder and tecnical report (In press)
 
