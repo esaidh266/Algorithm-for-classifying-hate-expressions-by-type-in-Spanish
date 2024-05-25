@@ -52,7 +52,7 @@ Agencia Estatal de Investigación – Ministerio de Ciencia e Innovación
 Con el apoyo de:
 - POSSIBLE S.L.
 
-Como citar: Pérez Palau, D., Blanco Valencia, X., Ruiz-Iniesta, A., De Gregorio Vicente, O., José Cubillas, J., Said-Hung, E. y Montero-Diaz, J. (2023). Algoritmo de clasificación de expresiones de odio por tipos en español [Algorithm for classifying hate expressions by type in Spanish. https://doi.org/10.6084/m9.figshare.25892815.v1.
+Como citar: Pérez Palau, D., Blanco Valencia, X., Ruiz-Iniesta, A., De Gregorio Vicente, O., José Cubillas, J., Said-Hung, E. y Montero-Diaz, J. (2023). Algoritmo de clasificación de expresiones de odio por tipos en español [Algorithm for classifying hate expressions by type in Spanish]. https://doi.org/10.6084/m9.figshare.25892815.v1.
 
 Más información:
 - https://www.hatemedia.es/ o contactar con:  elias.said@unir.net
@@ -122,7 +122,7 @@ State Research Agency – Ministry of Science and Innovation
 With the support of:
 - POSSIBLE S.L.
 
-How to cites: Pérez Palau, D., Blanco Valencia, X., Ruiz-Iniesta, A., De Gregorio Vicente, O., José Cubillas, J., Said-Hung, E. and Montero-Diaz, J. (2023). Algoritmo de clasificación de expresiones de odio por tipos en español [Algorithm for classifying hate expressions by types in Spanish. https://doi.org/10.6084/m9.figshare.25892815.v1.
+How to cites: Pérez Palau, D., Blanco Valencia, X., Ruiz-Iniesta, A., De Gregorio Vicente, O., José Cubillas, J., Said-Hung, E. and Montero-Diaz, J. (2023). Algoritmo de clasificación de expresiones de odio por tipos en español [Algorithm for classifying hate expressions by types in Spanish]. https://doi.org/10.6084/m9.figshare.25892815.v1.
 
 More information:
 - https://www.hatemedia.es/ or contact: elias.said@unir.net
