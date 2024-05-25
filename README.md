@@ -85,11 +85,9 @@ The folder structure with the GitHub documentation is presented below:
 
 The content of each file is detailed below:
 
-- DOCUMENTACIÓN GITHUB.docx:
-Report that presents the example of the script (1).py and get_characteristics (1).py to use the models.
+- DOCUMENTACIÓN GITHUB.docx: Report that presents the example of the script (1).py and get_characteristics (1).py to use the models.
 
-- ejemplo (1).py:
-Python script showing the use of models to make predictions.
+- ejemplo (1).py: Python script showing the use of models to make predictions.
 
 - hate_type_model: In this folder, we find the files necessary to build the model:
    - config.json: JSON file with the configuration of the trained model.
@@ -97,7 +95,7 @@ Python script showing the use of models to make predictions.
 
 The dataset that has been used for training the models is the result of the concatenation of the dataset dataset_DL_tipos.csv: https://acortar.link/pCuKtJ, with the different datasets generated through back translation, available in the folder "03 Types of hatred/Back translation": https://acortar.link/PceTsr
 
-Results and comparisons generated during the training and validation process of the final model used for the development of the algorithm are shared in the MODELOS folder and tecnical report (In press)
+Results and comparisons generated during the training and validation process of the final model used for the development of the algorithm are shared in the MODELOS folder and technical report (In press)
 
 The procedure followed to train the models is reflected in the Technical report on the development of a hate classification algorithm by intensities in Spanish digital news media on X (Twitter), Facebook, and web portals (https://doi.org/10.6084 /m9.figshare.25884262.v1).
 
