@@ -31,7 +31,8 @@ Se detalla a continuación el contenido de cada fichero:
   - config.json: Archivo JSON con la configuración del modelo entrenado.
   - pytorch_model.bin: Este archivo contiene los pesos de la red neuronal del modelo en formato binario compatible con PyTorch.
 
-El dataset que se ha utilizado para el entrenamiento de los modelos el el resultado de la concatenación del dataset dataset_DL_tipos.csv: https://acortar.link/pCuKtJ, con los distintos datasets generados mediante backtranslation, disponibles en la carpeta "03 Tipos de odio/Back translation": https://acortar.link/PceTsr
+El dataset que se ha utilizado para el entrenamiento de los modelos:
+- Said-Hung, Elias; Montero-Diaz, julio; Blanco, Xiomara; Ruiz-Iniesta, Almudena; Pérez Palau, Daniel; De Gregorio Vicente, Oscar; et al. (2024). Dataset usado para entrenamientos de modelos de algoritmos de clasificación de odio, por tipos e intensidades (Dataset used to train hate classification algorithm models by types and intensities). figshare. Dataset. https://doi.org/10.6084/m9.figshare.26085700.v1
 
 El Algoritmo fue desarrollado a partir de las pruebas de los modelos aplicados que se muestran en la carpeta MODELOS (https://acortar.link/e6hZSe). En esta carpeta se encuentran todos los resultados de los modelos utilizados durante el proceso de desarrollo de este algoritmo, con los respectivos porcentajes de entrenamiento y prueba.
 
