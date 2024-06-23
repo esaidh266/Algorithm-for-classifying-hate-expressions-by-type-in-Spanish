@@ -101,8 +101,6 @@ Results and comparisons generated during the training and validation process of 
 
 The procedure followed to train the models is reflected in the Technical report on the development of a hate classification algorithm by intensities in Spanish digital news media on X (Twitter), Facebook, and web portals (https://doi.org/10.6084 /m9.figshare.25884262.v1).
 
-The dataset used for training is dataset_completo_caracteristicas_ampliadas_todas_combinaciones_v1_textoProcesado.csv (https://acortar.link/diSV7o)
-
 The Algorithm was developed from the tests of the applied models shown in the MODELOS folder (In press). This folder contains all the results of the models used during the algorithm's development process, with the respective training and testing.
 
 The procedure followed to train the models is reflected in the technical report: The development of the hate classification algorithm by type in Spanish digital media in X (Twitter), Facebook, and web portals (In press).
