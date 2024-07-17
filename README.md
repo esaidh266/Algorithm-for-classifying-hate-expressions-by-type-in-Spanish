@@ -97,9 +97,7 @@ The content of each file is detailed below:
 The dataset that has been used to build this library:
 - Said-Hung, Elias; Montero-Diaz, julio; Blanco, Xiomara; Ruiz-Iniesta, Almudena; Pérez Palau, Daniel; De Gregorio Vicente, Oscar; et al. (2024). Dataset usado para entrenamientos de modelos de algoritmos de clasificación de odio, por tipos e intensidades (Dataset used to train hate classification algorithm models by types and intensities). figshare. Dataset. https://doi.org/10.6084/m9.figshare.26085700.v1
 
-Results and comparisons generated during the training and validation process of the final model used for the development of the algorithm are shared in the MODELOS folder and technical report (In press)
-
-The Algorithm was developed from the tests of the applied models shown in the MODELOS folder (https://acortar.link/d8WQ0P). This folder contains all the results of the models used during the algorithm's development process, with the respective training and testing.
+Results and comparisons generated during the training and validation process of the final model used for the development of the algorithm are shared in the MODELOS folder (https://acortar.link/d8WQ0P). This folder contains all the results of the models used during the algorithm's development process, with the respective training and testing.
 
 The procedure followed to train the models is reflected in the technical report: The development of the hate classification algorithm by type in Spanish digital media in X (Twitter), Facebook, and web portals (In press).
 
