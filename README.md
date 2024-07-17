@@ -36,7 +36,7 @@ El dataset que se ha utilizado para el entrenamiento de los modelos:
 
 El Algoritmo fue desarrollado a partir de las pruebas de los modelos aplicados que se muestran en la carpeta MODELOS (https://acortar.link/d8WQ0P). En esta carpeta se encuentran todos los resultados de los modelos utilizados durante el proceso de desarrollo de este algoritmo, con los respectivos porcentajes de entrenamiento y prueba.
 
-El procedimiento seguido para entrenar los modelos queda reflejado en el Informe técnico Desarrollo del algoritmo de clasificación del odio por tipos en medios digitales españoles en X (Twitter), Facebook y portales web (En elaboración).
+El procedimiento seguido para entrenar los modelos queda reflejado en el Informe técnico Desarrollo del algoritmo de clasificación del odio por tipos en medios digitales españoles en X (Twitter), Facebook y portales web (https://doi.org/10.6084/m9.figshare.26314360.v1).
 
 Autores: 
 - Daniel Pérez Palau
@@ -99,7 +99,7 @@ The dataset that has been used to build this library:
 
 Results and comparisons generated during the training and validation process of the final model used for the development of the algorithm are shared in the MODELOS folder (https://acortar.link/d8WQ0P). This folder contains all the results of the models used during the algorithm's development process, with the respective training and testing.
 
-The procedure followed to train the models is reflected in the technical report: The development of the hate classification algorithm by type in Spanish digital media in X (Twitter), Facebook, and web portals (In press).
+The procedure followed to train the models is reflected in the technical report: The development of the hate classification algorithm by type in Spanish digital media in X (Twitter), Facebook, and web portals (https://doi.org/10.6084/m9.figshare.26314360.v1).
 
 Authors:
 - Daniel Pérez Palau
