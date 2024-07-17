@@ -9,7 +9,7 @@ El algoritmo permite la clasificación de expresiones de odio, de acuerdo a 5 ti
 - Odio político: Expresiones contra individuos o colectivos por motivos de orientación política. 
 - Odio Sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
 - Odio misógino: Expresiones dirgidas contra mujeres o rasgos asociados a ellas.
-- Odio xenófono. Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante)
+- Odio xenófobo. Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante)
 
 La estructura de carpetas con la documentación de Github es la presentada a continuación:
 
@@ -29,7 +29,7 @@ Se detalla a continuación el contenido de cada fichero:
 
 - hate_type_model: En esta carpeta encontramos los archivos necesarios para la construcción del modelo:
   - config.json: Archivo JSON con la configuración del modelo entrenado.
-  - pytorch_model.bin: Este archivo contiene los pesos de la red neuronal del modelo en formato binario compatible con PyTorch.
+  - pytorch_model.bin: Este archivo contiene los pesos de la red neuronal del modelo en formato binario compatible con PyTorch. Este archivo debe descargarse desde https://acortar.link/rbCxiy y pegarse en la carpeta hate_type_model.
 
 El dataset que se ha utilizado para el entrenamiento de los modelos:
 - Said-Hung, Elias; Montero-Diaz, julio; Blanco, Xiomara; Ruiz-Iniesta, Almudena; Pérez Palau, Daniel; De Gregorio Vicente, Oscar; et al. (2024). Dataset usado para entrenamientos de modelos de algoritmos de clasificación de odio, por tipos e intensidades (Dataset used to train hate classification algorithm models by types and intensities). figshare. Dataset. https://doi.org/10.6084/m9.figshare.26085700.v1
@@ -92,7 +92,7 @@ The content of each file is detailed below:
 
 - hate_type_model: In this folder, we find the files necessary to build the model:
    - config.json: JSON file with the configuration of the trained model.
-   - pytorch_model.bin: This file contains the model's neural network weights in binary format compatible with PyTorch.
+   - pytorch_model.bin: This file contains the model's neural network weights in PyTorch-compatible binary format. This file should be downloaded from https://acortar.link/rbCxiy and pasted into the hate_type_model folder.
 
 The dataset that has been used to build this library:
 - Said-Hung, Elias; Montero-Diaz, julio; Blanco, Xiomara; Ruiz-Iniesta, Almudena; Pérez Palau, Daniel; De Gregorio Vicente, Oscar; et al. (2024). Dataset usado para entrenamientos de modelos de algoritmos de clasificación de odio, por tipos e intensidades (Dataset used to train hate classification algorithm models by types and intensities). figshare. Dataset. https://doi.org/10.6084/m9.figshare.26085700.v1
