@@ -5,14 +5,14 @@ Este código implementa un sistema de clasificación de discurso de odio utiliza
 ## Arquitectura del Modelo
 
 El modelo se basa en `pysentimiento/robertuito-base-uncased` con las siguientes modificaciones:
-- Se añadió una capa de clasificación densa con 6 salidas sobre el modelo base.
+- Se añadió una capa de clasificación densa con 5 salidas sobre el modelo base.
 - Utiliza IDs de entrada y máscaras de atención como entradas.
-- Genera una clasificación multiclase con 6 categorías.
+- Genera una clasificación multiclase con 5 categorías.
 
 ## Datasets
 
 1.  **Conjunto de Datos de Tipos de Odio**: Este modelo utiliza un conjunto de datos personalizado para la clasificación de tipos de discurso de odio, que incluye una columna `label` con etiquetas enteras del 0 al 5.
-    -   Las etiquetas numéricas corresponden a 6 clases distintas de discurso de odio. Las definiciones específicas de cada etiqueta (0-5) no se detallan en el código.
+    -   Las etiquetas numéricas corresponden a 6 clases distintas de discurso de odio. Las definiciones específicas de cada etiqueta (1-5) no se detallan en el código.
 
 ## Proceso de Entrenamiento
 
@@ -55,7 +55,7 @@ El modelo espera datos de entrada con las siguientes especificaciones:
 1.  **Formato de datos**:
     -   Archivo CSV o DataFrame de Pandas
     -   Nombre de columna obligatorio: `text` (tipo cadena)
-    -   Nombre de columna opcional: `label` (tipo entero, 0 a 5) si está disponible para la evaluación
+    -   Nombre de columna opcional: `label` (tipo entero, 1 a 5) si está disponible para la evaluación
 
 2.  **Preprocesamiento de texto**:
     -   El texto se tokenizará automáticamente a minúsculas durante el procesamiento.
@@ -64,12 +64,12 @@ El modelo espera datos de entrada con las siguientes especificaciones:
 
 3.  **Codificación de etiquetas**:
 
-    -   El modelo clasifica los textos en 5 clases distintas, representadas por los enteros:
-        -   `1`: Odio general o indiferenciado: Expresiones de odio, sin un claro dominio de uno de los tipos específicos considerados en este monitor, pudiendo contener en este tipo de mensajes más de un tipo de odio.
-        -   `2`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
-        -   `3`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
-        -   `4`: Odio misógino: Expresiones dirgidas contra mujeres o rasgos asociados a ellas.
-        -   `5`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
+-   El modelo clasifica los textos en 5 clases distintas, representadas por los enteros:
+    -   `1`: Odio general o indiferenciado: Expresiones de odio, sin un claro dominio de uno de los tipos específicos considerados en este monitor, pudiendo contener en este tipo de mensajes más de un tipo de odio.
+    -   `2`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
+    -   `3`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
+    -   `4`: Odio misógino: Expresiones dirigidas contra mujeres o rasgos asociados a ellas.
+    -   `5`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
 
 El proceso de creación de este algoritmo se expone en el informe técnico localizado en: 
 
@@ -100,14 +100,14 @@ This code implements a hate speech classification system using the RoBERTuito mo
 ##Model Architecture
 
 The model is based on `pysentimiento/robertuito-base-uncased` with the following modifications:
-- A dense classification layer with 6 outputs has been added over the base model.
+- A dense classification layer with 5 outputs has been added over the base model.
 - It uses input IDs and attention masks as inputs.
-- It generates a multiclass classification with 6 categories.
+- It generates a multiclass classification with 5 categories.
 
 ##Datasets
 
 1. **Hate Speech Types Dataset**: This model uses a custom dataset for hate speech type classification, which includes a `label` column with integer labels from 0 to 5.
-- The numerical labels correspond to 6 distinct classes of hate speech. The specific definitions of each label (0-5) are not detailed in the code.
+- The numerical labels correspond to 6 distinct classes of hate speech. The specific definitions of each label (1-5) are not detailed in the code.
 
 ## Training Process
 
@@ -150,7 +150,7 @@ The model expects input data with the following specifications:
 1. **Data Format**:
 - CSV file or Pandas DataFrame
 - Required column name: `text` (string type)
-- Optional column name: `label` (integer type, 0 to 5) if available for evaluation
+- Optional column name: `label` (integer type, 1 to 5) if available for evaluation
 
 2. **Text Preprocessing**:
 - Text will be automatically tokenized to lowercase during processing.
