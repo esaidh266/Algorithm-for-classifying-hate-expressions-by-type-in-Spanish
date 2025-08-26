@@ -89,9 +89,9 @@ Como citar: Pérez Palau, D., Blanco Valencia, X., Ruiz-Iniesta, A., De Gregorio
 
 Más información:
 
-    -   https://www.hatemedia.es/ o contactar con:  elias.said@unir.net
-    -   Este algoritmo está relacionado con el algoritmo de clasificación de odio/no odio, desarrollado también por los autores: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
-    -   Este algoritmo está relacionado con el algoritmo de clasificación de expresiones de odio por intensidades en español, desarrollado también por los autores: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
+- https://www.hatemedia.es/ o contactar con:  elias.said@unir.net
+- Este algoritmo está relacionado con el algoritmo de clasificación de odio/no odio, desarrollado también por los autores: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
+- Este algoritmo está relacionado con el algoritmo de clasificación de expresiones de odio por intensidades en español, desarrollado también por los autores: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
 
 ---------
 
@@ -189,6 +189,7 @@ More information:
 - https://www.hatemedia.es/ or contact: elias.said@unir.net
 - This algorithm is related to the hate/non-hate classification algorithm, also developed by the authors: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
 - This algorithm is related to the algorithm for classifying hate expressions by intensities in Spanish, also developed by the authors: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
+
 
 
 
