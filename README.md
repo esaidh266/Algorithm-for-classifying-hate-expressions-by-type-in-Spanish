@@ -64,12 +64,12 @@ El modelo espera datos de entrada con las siguientes especificaciones:
 
 3.  **Codificación de etiquetas**:
 
--   El modelo clasifica los textos en 5 clases distintas, representadas por los enteros:
-    -   `1`: Odio general o indiferenciado: Expresiones de odio, sin un claro dominio de uno de los tipos específicos considerados en este monitor, pudiendo contener en este tipo de mensajes más de un tipo de odio.
-    -   `2`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
-    -   `3`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
-    -   `4`: Odio misógino: Expresiones dirgidas contra mujeres o rasgos asociados a ellas.
-    -   `5`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
+    -   El modelo clasifica los textos en 5 clases distintas, representadas por los enteros:
+        -   `1`: Odio general o indiferenciado: Expresiones de odio, sin un claro dominio de uno de los tipos específicos considerados en este monitor, pudiendo contener en este tipo de mensajes más de un tipo de odio.
+        -   `2`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
+        -   `3`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
+        -   `4`: Odio misógino: Expresiones dirgidas contra mujeres o rasgos asociados a ellas.
+        -   `5`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
 
 El proceso de creación de este algoritmo se expone en el informe técnico localizado en: 
 
@@ -187,4 +187,5 @@ More information:
 - https://www.hatemedia.es/ or contact: elias.said@unir.net
 - This algorithm is related to the hate/non-hate classification algorithm, also developed by the authors: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
 - This algorithm is related to the algorithm for classifying hate expressions by intensities in Spanish, also developed by the authors: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
+
 
