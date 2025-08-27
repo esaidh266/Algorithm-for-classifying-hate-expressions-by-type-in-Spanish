@@ -65,11 +65,11 @@ El modelo espera datos de entrada con las siguientes especificaciones:
 3.  **Codificación de etiquetas**:
 
 -   El modelo clasifica los textos en 5 clases distintas, representadas por los enteros:
+    -   `0`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
     -   `1`: Odio general o indiferenciado: Expresiones de odio, sin un claro dominio de uno de los tipos específicos considerados en este monitor, pudiendo contener en este tipo de mensajes más de un tipo de odio.
-    -   `2`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
-    -   `3`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
+    -   `2`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
+    -   `3`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
     -   `4`: Odio misógino: Expresiones dirigidas contra mujeres o rasgos asociados a ellas.
-    -   `5`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
 
 El proceso de creación de este algoritmo se expone en el informe técnico localizado en: 
 
@@ -162,11 +162,11 @@ The model expects input data with the following specifications:
 3. **Tag Encoding**:
 
 - The model classifies texts into 5 distinct classes, represented by integers:
-    - `1`: General or undifferentiated hate: Expressions of hate, without a clear dominance of one of the specific types considered in this monitor, and these types of messages may contain more than one type of hate.
-    - `2`: Political hate: Expressions against individuals or groups for reasons of political orientation.
-    - `3`: Sexual hate: Expressions directed against individuals or groups for their sexual orientation.
-    - `4`: Misogynistic hate: Expressions directed against women or traits associated with them.
-    - `5`: Xenophonous hatred: Expressions directed against people or groups, due to their origin (e.g. foreigner and immigrant).
+    - `0`: Political hatred: Expressions directed against individuals or groups based on their political orientation.
+    - `1`: General or undifferentiated hatred: Expressions of hatred without a clear focus on one of the specific types considered in this monitor. This type of message may contain more than one type of hatred.
+    - `2`: Sexual hatred: Expressions directed against individuals or groups based on their sexual orientation.
+    - `3`: Xenophobic hatred: Expressions directed against individuals or groups based on their origin (e.g., foreigners and immigrants).
+    - `4`: Misogynistic hatred: Expressions directed against women or traits associated with them.
 
 The process of creating this algorithm is explained in the technical report located at:XXXX
 
@@ -189,6 +189,7 @@ More information:
 - https://www.hatemedia.es/ or contact: elias.said@unir.net
 - This algorithm is related to the hate/non-hate classification algorithm, also developed by the authors: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
 - This algorithm is related to the algorithm for classifying hate expressions by intensities in Spanish, also developed by the authors: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
+
 
 
 
