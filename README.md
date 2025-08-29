@@ -1,33 +1,40 @@
-# Modelo de clasificación de tipos de discurso de odio
+# Modelo de Clasificación de Tipos de Discurso de Odio
 
-Este código implementa un sistema de clasificación de discurso de odio utilizando el modelo RoBERTuito (una versión en español de RoBERTa) para detectar diferentes tipos de discurso de odio en tuits.
+Este código implementa un sistema de clasificación de tipos de discurso de odio utilizando el modelo RoBERTuito (una versión en español de RoBERTa) para detectar y categorizar diferentes tipos de discurso de odio en textos.
 
 ## Arquitectura del Modelo
 
 El modelo se basa en `pysentimiento/robertuito-base-uncased` con las siguientes modificaciones:
-- Se añadió una capa de clasificación densa con 5 salidas sobre el modelo base.
-- Utiliza IDs de entrada y máscaras de atención como entradas.
-- Genera una clasificación multiclase con 5 categorías.
+- Se añadió una capa de clasificación densa sobre el modelo base
+- Utiliza IDs de entrada y máscaras de atención como entradas
+- Genera una clasificación multi-clase con 5 categorías de odio
 
-## Datasets
+## Dataset
 
-1.  **Conjunto de Datos de Tipos de Odio**: Este modelo utiliza un conjunto de datos personalizado para la clasificación de tipos de discurso de odio, que incluye una columna `label` con etiquetas enteras del 0 al 5.
-    -   Las etiquetas numéricas corresponden a 6 clases distintas de discurso de odio. Las definiciones específicas de cada etiqueta (1-5) no se detallan en el código.
+**Conjunto de Datos HATEMEDIA**: Conjunto de datos personalizado de discurso de odio con categorización por tipos:
+- **Etiquetas**: 5 categorías de tipos de odio (0-4)
+- **Preprocesamiento**: 
+  - Eliminación de valores nulos en texto y etiquetas
+  - Reindexación y reetiquetado (las etiquetas originales se ajustan restando 1)
+  - Exclusión de la categoría 2 durante el entrenamiento
+  - Conversión de la categoría 5 a categoría 2
 
 ## Proceso de Entrenamiento
 
-### Pre-entrenamiento
-- Batch size: 16
-- Epochs: 5
-- Learning rate: 2e-5 with 10% warmup steps
-- Early stopping with patience=2
+### Configuración
+- **Batch size**: 128
+- **Épocas**: 5
+- **Learning rate**: 2e-5 con warmup steps del 10%
+- **Early stopping** con paciencia=2
+- **Pesos de clase**: Balanceados para manejar desequilibrio de clases
 
-### Fine-tuning
-- Batch size: 128
-- Epochs: 5
-- Learning rate: 2e-5 with 10% warmup steps
-- Early stopping with patience=2
-- Métricas personalizadas (ej., recall, precision, F1-score ponderados por clase, AUC multiclase).
+### Métricas Personalizadas
+- Recall para clases específicas (focus en clase 2)
+- Precision para clases específicas (focus en clase 3)
+- F1-score (weighted)
+- AUC-PR
+- Recall at precision=0.6 (clase 3)
+- Precision at recall=0.6 (clase 2)
 
 ## Métricas de Evaluación
 
@@ -37,10 +44,23 @@ El modelo se evalúa utilizando:
 - Accuracy
 - Métricas por clase
 - Matriz de confusión
+- Classification report completo
+
+## Características Técnicas
+
+### Preprocesamiento de Datos
+- **Tokenización**: Máxima longitud de 128 tokens (truncamiento y padding)
+- **Codificación de etiquetas**: One-hot encoding para clasificación multi-clase
+- **División de datos**: 80% entrenamiento, 10% validación, 10% prueba
+
+### Optimización
+- **Optimizador**: Adam con schedule de warmup lineal
+- **Función de pérdida**: Categorical Crossentropy (from_logits=True)
+- **Manejo de desbalance**: Class weights computados automáticamente
 
 ## Requerimientos
 
-Se requiere los siguientes paquetes de Python (consulte requirements.txt para ver la lista completa):
+Se requieren los siguientes paquetes de Python:
 - TensorFlow
 - Transformers
 - scikit-learn
@@ -48,28 +68,42 @@ Se requiere los siguientes paquetes de Python (consulte requirements.txt para ve
 - datasets
 - matplotlib
 - seaborn
+- numpy
 
 ## Uso
-El modelo espera datos de entrada con las siguientes especificaciones:
 
-1.  **Formato de datos**:
-    -   Archivo CSV o DataFrame de Pandas
-    -   Nombre de columna obligatorio: `text` (tipo cadena)
-    -   Nombre de columna opcional: `label` (tipo entero, 1 a 5) si está disponible para la evaluación
+1. **Formato de datos**:
+- Archivo CSV o DataFrame de Pandas
+- Nombre de columna obligatorio: `text` (tipo cadena)
+  - Nombre de columna obligatorio: Etiqueta de tipo de odio (tipo entero, 0-4) - ppcional para evaluación
 
-2.  **Preprocesamiento de texto**:
-    -   El texto se tokenizará automáticamente a minúsculas durante el procesamiento.
-    -   Longitud máxima: 128 tokens (los textos más largos se truncarán).
-    -   Los caracteres especiales, las URL y los emojis deben permanecer en el texto (el tokenizador los gestiona).
+2. **Preprocesamiento de texto**:
+- Tokenización automática con longitud máxima de 128 tokens
+- Los textos largos se truncarán automáticamente
+- Manejo de caracteres especiales, URLs y emojis incluido
 
-3.  **Codificación de etiquetas**:
-
--   El modelo clasifica los textos en 5 clases distintas, representadas por los enteros:
+3. **Codificación de etiquetas**:
+- El modelo clasifica en 5 categorías de tipos de discurso de odio (0-4)
     -   `0`: Odio político: Expresiones contra individuos o colectivos por motivos de orientación política.
     -   `1`: Odio general o indiferenciado: Expresiones de odio, sin un claro dominio de uno de los tipos específicos considerados en este monitor, pudiendo contener en este tipo de mensajes más de un tipo de odio.
     -   `2`: Odio sexual: Expresiones dirigidas contra personas o colectivos por su orientación sexual.
     -   `3`: Odio xenófono: Expresiones dirigidas contra personas o colectivos, por motivo de origen (e.j. extranjero e inmigrante).
     -   `4`: Odio misógino: Expresiones dirigidas contra mujeres o rasgos asociados a ellas.
+      
+**Estructura de Archivos**
+
+El código genera y guarda:
+- Pesos del modelo entrenado (.h5)
+- Tokenizer configurado
+- Historial de entrenamiento en CSV
+- Archivo de requirements
+
+**Notas Importantes**
+
+- El modelo excluye la categoría 2 durante el entrenamiento
+- Implementa transfer learning desde un modelo preentrenado en detección binaria de odio
+- Incluye callbacks de early stopping para prevenir overfitting
+- Utiliza class weighting para manejar desbalance en las categorías
 
 El proceso de creación de este algoritmo se expone en el informe técnico localizado en: 
 
@@ -97,47 +131,67 @@ Más información:
 
 # Hate Speech Type Classification Model
 
-This code implements a hate speech classification system using the RoBERTuito model (a Spanish version of RoBERTa) to detect different types of hate speech in tweets.
+This code implements a hate speech type classification system using the RoBERTuito model (a Spanish version of RoBERTa) to detect and categorize different types of hate speech in texts.
 
-##Model Architecture
+## Model Architecture
 
 The model is based on `pysentimiento/robertuito-base-uncased` with the following modifications:
-- A dense classification layer with 5 outputs has been added over the base model.
-- It uses input IDs and attention masks as inputs.
-- It generates a multiclass classification with 5 categories.
+- A dense classification layer was added over the base model
+- Uses input IDs and attention masks as inputs
+- Generates a multi-class classification with 5 hate categories
 
-##Datasets
+## Dataset
 
-1. **Hate Speech Types Dataset**: This model uses a custom dataset for hate speech type classification, which includes a `label` column with integer labels from 0 to 5.
-- The numerical labels correspond to 6 distinct classes of hate speech. The specific definitions of each label (1-5) are not detailed in the code.
+**HATEMEDIA Dataset**: Custom hate speech dataset with categorization by type:
+- **Labels**: 5 hate type categories (0-4)
+- **Preprocessing**:
+- Null values ​​removed from text and labels
+- Reindexing and relabeling (original labels are adjusted by subtracting 1)
+- Exclusion of category 2 during training
+- Conversion of category 5 to category 2
 
 ## Training Process
 
-### Pre-training
-- Group size: 16
-- Epochs: 5
-- Learning rate: 2e-5 with 10% warm-up steps
-- Early stopping with patience = 2
+### Configuration
+- **Batch size**: 128
+- **Epoches**: 5
+- **Learning rate**: 2e-5 with 10% warmup steps
+- **Early stopping** with patience=2
+- **Class weights**: Balanced to handle class imbalance
 
-### Fine-tuning
-- Group size: 128
-- Epochs: 5
-- Learning rate: 2e-5 with 10% warm-up steps
-- Early stopping with patience = 2
-- Custom metrics (e.g., recall, precision, class-weighted F1 score, multi-class AUC).
+### Custom Metrics
+- Recall for specific classes (focus on class 2)
+- Precision for specific classes (focus on class 3)
+- F1-score (weighted)
+- AUC-PR
+- Recall at precision=0.6 (class 3)
+- Precision at recall=0.6 (class 2)
 
 ## Evaluation Metrics
 
 The model is evaluated using:
-- Macro recall, precision, and F1 score
-- One-versus-rest AUC
+- Macro recall, precision, and F1-score
+- One-vs-Rest AUC
 - Accuracy
 - Per-class metrics
 - Confusion matrix
+- Full classification report
 
-##Requirements
+## Technical Features
 
-The following Python packages are required (see requirements.txt for the full list):
+### Data Preprocessing
+- **Tokenization**: Maximum length of 128 tokens (truncation and padding)
+- **Encoding of labels**: One-hot encoding for multi-class classification
+- **Data split**: 80% training, 10% validation, 10% testing
+
+### Optimization
+- **Optimizer**: Adam with linear warmup scheduling
+- **Loss function**: Categorical Crossentropy (from_logits=True)
+- **Imbalance handling**: Class weights computed automatically
+
+## Requirements
+
+The following Python packages are required:
 - TensorFlow
 - Transformers
 - scikit-learn
@@ -145,28 +199,42 @@ The following Python packages are required (see requirements.txt for the full li
 - datasets
 - matplotlib
 - seaborn
+- numpy
 
-##Usage
-The model expects input data with the following specifications:
+## Usage
 
-1. **Data Format**:
+1. **Data format**:
 - CSV file or Pandas DataFrame
 - Required column name: `text` (string type)
-- Optional column name: `label` (integer type, 1 to 5) if available for evaluation
+- Required column name: Data type label (integer type, 0-4) - optional for evaluation
 
-2. **Text Preprocessing**:
-- Text will be automatically tokenized to lowercase during processing.
-- Maximum length: 128 tokens (longer texts will be truncated).
-- Special characters, URLs, and emojis must remain in the text (the tokenizer handles them).
+2. **Text preprocessing**:
+- Automatic tokenization with a maximum length of 128 tokens
+- Long texts will be automatically truncated
+- Handling of special characters, URLs, and emojis included
 
-3. **Tag Encoding**:
+3. **Label encoding**:
+- The model classifies hate speech into 5 categories (0-4)
+- `0`: Political hatred: Expressions directed against individuals or groups based on political orientation.
+- `1`: General or undifferentiated hatred: Expressions of hatred without a clear dominance of one of the specific types considered in this monitor, and these types of messages may contain more than one type of hatred.
+- `2`: Sexual hatred: Expressions directed against individuals or groups based on their sexual orientation.
+- `3`: Xenophonic hatred: Expressions directed against individuals or groups based on their origin (e.g., foreigners and immigrants).
+- `4`: Misogynistic hate: Expressions directed against women or traits associated with them.
 
-- The model classifies texts into 5 distinct classes, represented by integers:
-    - `0`: Political hatred: Expressions directed against individuals or groups based on their political orientation.
-    - `1`: General or undifferentiated hatred: Expressions of hatred without a clear focus on one of the specific types considered in this monitor. This type of message may contain more than one type of hatred.
-    - `2`: Sexual hatred: Expressions directed against individuals or groups based on their sexual orientation.
-    - `3`: Xenophobic hatred: Expressions directed against individuals or groups based on their origin (e.g., foreigners and immigrants).
-    - `4`: Misogynistic hatred: Expressions directed against women or traits associated with them.
+**File Structure**
+
+The code generates and saves:
+- Weights of the trained model (.h5)
+- Configured tokenizer
+- Training history in CSV
+- Requirements file
+
+**Important Notes**
+
+- The model excludes category 2 during training
+- Implements transfer learning from a pre-trained model for binary hate detection
+- Includes early stopping callbacks to prevent overfitting
+- Uses class weighting to handle category imbalances
 
 The process of creating this algorithm is explained in the technical report located at:XXXX
 
@@ -189,6 +257,7 @@ More information:
 - https://www.hatemedia.es/ or contact: elias.said@unir.net
 - This algorithm is related to the hate/non-hate classification algorithm, also developed by the authors: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
 - This algorithm is related to the algorithm for classifying hate expressions by intensities in Spanish, also developed by the authors: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
+
 
 
 
