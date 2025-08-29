@@ -105,16 +105,16 @@ El código genera y guarda:
 - Incluye callbacks de early stopping para prevenir overfitting
 - Utiliza class weighting para manejar desbalance en las categorías
 
-El proceso de creación de este algoritmo se expone en el informe técnico localizado en: 
+El proceso de creación de este algoritmo se expone en el informe técnico localizado en: Blanco-Valencia, X., De Gregorio-Vicente, O., Ruiz Iniesta, A., & Said-Hung, E. (2025). Algoritmos de detección de odio/no odio, tipo e intensidad – Hatemedia V.2.0 (Version 2). Hatemedia Project. https://doi.org/10.5281/zenodo.16996080
 
 Autores: 
-- Elias Said-Hung
-- Julio Montero-Díaz
-- Oscar De Gregorio
-- Almudena Ruiz
+- Daniel Pérez Palau
 - Xiomara Blanco
+- Almudena Ruiz
+- Oscar De Gregorio
 - Juan José Cubillas
-- Daniel Pérez Palau 
+- Elias Said-Hung
+- Julio Montero-Díaz 
 
 Financiado por: 
 MCIN/AEI /10.13039/501100011033
@@ -236,16 +236,16 @@ The code generates and saves:
 - Includes early stopping callbacks to prevent overfitting
 - Uses class weighting to handle category imbalances
 
-The process of creating this algorithm is explained in the technical report located at:XXXX
+The process of creating this algorithm is explained in the technical report located at: Blanco-Valencia, X., De Gregorio-Vicente, O., Ruiz Iniesta, A., & Said-Hung, E. (2025). Algoritmos de detección de odio/no odio, tipo e intensidad – Hatemedia V.2.0 (Version 2). Hatemedia Project. https://doi.org/10.5281/zenodo.16996080
 
 Authors:
-- Elias Said-Hung
-- Julio Montero-Díaz
-- Oscar De Gregorio
-- Almudena Ruiz
-- Xiomara Blanco
-- Juan José Cubillas
 - Daniel Pérez Palau
+- Xiomara Blanco
+- Almudena Ruiz
+- Oscar De Gregorio
+- Juan José Cubillas
+- Elias Said-Hung
+- Julio Montero-Díaz 
 
 Funded by:
 MCIN/AEI/10.13039/501100011033
@@ -257,9 +257,3 @@ More information:
 - https://www.hatemedia.es/ or contact: elias.said@unir.net
 - This algorithm is related to the hate/non-hate classification algorithm, also developed by the authors: https://github.com/esaidh266/Algorithm-for-detection-of-hate-speech-in-Spanish
 - This algorithm is related to the algorithm for classifying hate expressions by intensities in Spanish, also developed by the authors: https://github.com/esaidh266/Algorithm-for-classifying-hate-expressions-by-intensities-in-Spanish
-
-
-
-
-
-
